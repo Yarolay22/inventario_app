@@ -1,0 +1,39 @@
+body {
+    background-color: #e1e1e1;
+    width: 100%;
+    height: 100vh;
+}
+
+.page-center {
+    display: grid;
+    place-items: center;
+}
+
+.icono {
+    font-size: 12rem;
+}
+
+
+.listProductos {
+    z-index: 1;
+    width: 100%;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+
+#myTable thead th,
+#myTable tbody td {
+    text-align: center;
+}
+
+#myTable_wrapper {
+    max-width: 100%;
+}
+
+#myTable_wrapper #myTable,
+#myTable.dataTable {
+    width: 100%;
+}

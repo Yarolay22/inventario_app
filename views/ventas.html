@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario App</title>
+    <link rel="stylesheet" href="./vendor/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./vendor/css/datatables.min.css">
+    <link rel="stylesheet" href="./vendor/css/sweetalert2.min.css">
+    <link rel="stylesheet" href="./style/app.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="icon" type="image/png" href="./image/favicon.png" />
+</head>
+
+<body class="">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="/dashboard">
+                <img src="./image/paginainicio.png" alt="Logo" width="90" height="80"
+                    height="24" class="d-inline-block align-text-top">
+                InventarioAPP
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/ventas">Ventas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/productos">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/historial-ventas">Historial Ventas</a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center gap-2">
+                    <p class="fw-bold m-0" id="userLabel"></p>
+                    <button type="button" class="btn btn-danger" id="btnSalir">Salir</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <main class="w-full mt-3  container d-flex flex-column gap-3">
+        <div>
+            <div class="row mb-3">
+                <a href="/dashboard" class="text-decoration-none text-black fw-normal d-flex align-items-center gap-2">
+                    <i class="bi bi-arrow-left-circle fs-5"></i>
+                    Volver
+                </a>
+            </div>
+            <div class="row">
+                <div class="col d-flex align-items-center gap-2">
+                    <img src="./image/paginaventas.png" alt="ventas" width="80" height="80">
+                    <h2 class="fw-bold">Ventas.</h2>
+                </div>
+                <div class="col d-flex justify-content-end">
+                    <div class="d-flex align-items-center">
+                        <button class="btn btn-primary" id="btnPagar">PAGAR</button>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="row card">
+            <div class="col-10 py-2 offset-1">
+                <div class="mb-3 position-relative">
+                    <label for="basic-url" class="form-label">Buscador de Productos:</label>
+                    <div class="input-group mb-2">
+                        <span class="input-group-text" id="basic-addon1">@</span>
+                        <input type="text" class="form-control" placeholder="Search Producto..."
+                            aria-describedby="basic-addon1" id="inputSearchProduct" autocomplete="off">
+                    </div>
+
+                    <ul class="list-group position-absolute listProductos d-none"></ul>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row card">
+            <div class="card-body">
+                <div>
+                    <table id="myTable" class="display table" style="width: 100%;"></table>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <div class="row card">
+            <div class="card-body">
+                <div class="row d-flex align-items-center">
+                    <div class="col-6 d-flex gap-2 align-items-center">
+                        <img src="./image/inventario.png" width="50" />
+                        <h3>Ventas</h3>
+                    </div>
+                    <div class="col-6">
+                        <div class="d-flex flex-column align-items-end">
+                            <h3 class="fw-normal" id="subTotalTexto">Subtotal: <span class="fw-bold">$ 0.0</span></h3>
+                            <h2 class="fw-normal" id="totalTexto">Total: <span class="fw-bold">$ 0.0</span></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <script src="./vendor/js/jquery.min.js"></script>
+    <script src="./vendor/js/datatables.min.js"></script>
+    <script src="./vendor/js/bootstrap.min.js"></script>
+    <script src="./vendor/js/sweetalert2.all.min.js"></script>
+    <script src="./script/utils/http.js"></script>
+    <script src="./script/utils/servicio.js"></script>
+    <script src="./script/detalleAuth.js"></script>
+    <script src="./script/ventas.js"></script>
+
+</body>
+
+</html>

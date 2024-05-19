@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario App</title>
+    <link rel="stylesheet" href="./vendor/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./style/app.css">
+    <link rel="icon" type="image/png" href="./image/favicon.png" />
+</head>
+
+<body class="page-center">
+    <nav class="navbar bg-body-tertiary fixed-top w-full">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="/dashboard">
+                <img src="./image/paginainicio.png" alt="Logo" width="90" height="80"
+                    height="24" class="d-inline-block align-text-top">
+                InventarioAPP
+            </a>
+        </div>
+    </nav>
+
+    <div class="card" style="width: 30rem;">
+        <div class="card-body">
+            <div class="col d-flex align-items-center gap-5">
+                <img src="./image/login.png" alt="login" width="80" height="80">
+                <h2 class="fw-bold">Iniciar sesión</h2>
+            </div>
+            <form id="formulario">
+                <div class="mb-3">
+                    <label for="inputEmail" class="form-label">Correo Electronico:</label>
+                    <input type="email" class="form-control" id="inputEmail" name="email" placeholder="mail@example.com"
+                        value="yarolay@admin.com">
+                </div>
+                <div class="mb-3">
+                    <label for="inputPassword" class="form-label">Contraseña:</label>
+                    <input type="password" class="form-control" id="inputPassword" name="password"
+                        placeholder="********" value="123456">
+                </div>
+
+                <div class="mb-3 d-flex justify-content-center ">
+                    <button type="submit" class="btn btn-primary">
+                        Ingresar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="./script/utils/http.js"></script>
+    <script src="./vendor/js/sweetalert2.all.min.js"></script>
+    <script src="./vendor/js/zod.min.js"></script>
+    <script src="./script/utils/servicio.js"></script>
+    <script src="./script/login.js"></script>
+</body>
+
+</html>

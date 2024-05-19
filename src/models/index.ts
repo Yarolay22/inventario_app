@@ -1,0 +1,5 @@
+export { default as ErrorAppHttp } from './error.model'
+export { default as CategoriaModel } from './categoria.model'
+export { default as ProductoModel } from './producto.model'
+export { default as UsuarioModel } from './user.model'
+export { default as VentaModel } from './venta.model'

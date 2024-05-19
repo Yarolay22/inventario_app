@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "ts-node-dev ./src/app.ts",
+    "build": "npx tsc --project tsconfig.json",
     "start": "node ./dist/app.js"
   },
   "keywords": [],

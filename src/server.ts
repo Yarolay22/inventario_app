@@ -2,6 +2,8 @@ import path from 'path'
 import express from 'express'
 import morgan from 'morgan'
 import session from 'express-session'
+import cors from "cors";
+
 import { ConfigEnv, EnvVars } from './constant';
 import { AppRoute } from './interfaces';
 import passport from './config/passport'
@@ -47,6 +49,9 @@ class Server {
     }
 
     private middlewares(): void {
+        this.app.use(cors({
+            origin: '*'
+        }))
         this.app.use(express.json())
         this.app.use(express.urlencoded({ extended: true }))
         this.app.use(morgan('dev'))

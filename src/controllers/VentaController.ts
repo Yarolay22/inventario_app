@@ -22,6 +22,7 @@ class VentaController implements AppRoute {
         this.getProductosVenta();
         this.validateProductCantidad();
         this.getListVentas();
+        this.getListVentaTable();
         this.detalleVenta();
         this.payVentaProduct()
         this.removeProductVenta();
@@ -117,6 +118,17 @@ class VentaController implements AppRoute {
     }
 
     getListVentas() {
+        this._router.get('/listado', async (req: Request, res: Response) => {
+            try {
+                const response = await this.ventaService.getListVentas();
+                return res.status(200).json({ data: response })
+            } catch (error) {
+                console.log("🚀 ~ ProductoController ~ this._router.get ~ error:", error)
+            }
+        })
+    }
+
+    getListVentaTable() {
         this._router.get('/list-table', async (req: Request, res: Response) => {
             try {
                 const response = await this.ventaService.getListVentas();

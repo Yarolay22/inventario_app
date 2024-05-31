@@ -25,6 +25,8 @@ class ProductoController implements AppRoute {
         this.getAllCategories();
 
         this.getAllProductos();
+        this.getAllProductosTable();
+
         this.detalleProducto();
         this.createProduct();
         this.updateProducto();
@@ -33,6 +35,17 @@ class ProductoController implements AppRoute {
     }
 
     getAllProductos() {
+        this._router.get('/listado', async (_req: Request, res: Response) => {
+            try {
+                let productos = await this.productoService.findByAll()
+                return res.status(200).json({ total: productos.length, data: productos })
+            } catch (error) {
+                console.log("🚀 ~ ProductoController ~ this._router.get ~ error:", error)
+            }
+        })
+    }
+
+    getAllProductosTable() {
         this._router.get('/data-table', async (_req: Request, res: Response) => {
             try {
                 let productos = await this.productoService.findByAll()
